@@ -1554,3 +1554,71 @@ In this step, we will develop an AI-powered sentiment analysis API that predicts
 Step 120: Real-Time Alerts for Trending Topics 🚨
 This is the final step! 🎉 We will implement real-time alerts for trending social media topics based on sentiment, engagement, and volume.
 
+Here's a list of all the commands needed to install the required dependencies for the Social Media Monitoring (SMM) Tool project on Windows.
+
+1. Install Basic Tools
+✅ Install Python (if not installed):
+Download and install Python from the official site.
+Make sure to check "Add Python to PATH" during installation.
+
+✅ Install Git (if not installed):
+Download and install Git from the official site.
+
+✅ Install Node.js & npm (for React Native app):
+Download and install Node.js from the official site.
+Verify installation:
+  node -v
+  npm -v
+✅ Install React Native CLI (for mobile app development):
+  npm install -g react-native-cli
+2. Create a Virtual Environment (Recommended)
+Open Command Prompt (cmd) or PowerShell and run:
+  python -m venv smm_env
+  smm_env\Scripts\activate
+3. Install Python Dependencies
+  pip install fastapi uvicorn websocket-client
+  pip install pandas numpy requests beautifulsoup4
+  pip install scikit-learn transformers torch
+  pip install psycopg2-binary pymongo
+  pip install SQLAlchemy
+4. Install PostgreSQL or MongoDB (Database)
+For PostgreSQL
+✅ Download & Install PostgreSQL from:
+👉 https://www.postgresql.org/download/windows/
+
+✅ After installation, open psql and run:
+    CREATE DATABASE smm_db;
+    CREATE USER smm_user WITH ENCRYPTED PASSWORD 'password';
+    GRANT ALL PRIVILEGES ON DATABASE smm_db TO smm_user;
+For MongoDB
+✅ Download & Install MongoDB from:
+👉 https://www.mongodb.com/try/download/community
+
+✅ Start MongoDB Service:
+    net start MongoDB
+5. Install Docker for Windows (Optional)
+✅ Download and install Docker Desktop from:
+👉 https://www.docker.com/products/docker-desktop/
+
+✅ Enable WSL 2 Backend (if needed): 
+wsl --install
+✅ Restart your PC after installation.
+
+6. Install MQTT Broker (For Real-Time Communication)
+✅ Download & Install Mosquitto MQTT Broker from:
+👉 https://mosquitto.org/download/
+
+✅ Start the MQTT Broker:
+net start mosquitto
+7. Running the Project
+Start Backend API 
+  uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+Start React Native Mobile App
+  cd smm_mobile
+  npm install
+  react-native run-android  # (For Android)  
+  react-native run-ios  # (For iOS, only on Mac)
+Start WebSocket Server
+  python websocket_server.py
+Run Sentiment Analysis & Trend Detection AI
+  python ai_model.py
